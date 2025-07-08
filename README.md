@@ -1,1 +1,1 @@
-Planner stickers
+Planner stickers for all planners
