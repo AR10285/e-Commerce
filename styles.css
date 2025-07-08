@@ -1,5 +1,9 @@
-/* reset + base */
-* { margin: 0; padding: 0; box-sizing: border-box }
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: sans-serif;
   line-height: 1.5;
@@ -7,7 +11,22 @@ body {
   color: #333;
 }
 
-/* header */
+/* SKIP-LINK */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* HEADER */
 .site-header {
   text-align: center;
   padding: 1rem 0;
@@ -16,29 +35,36 @@ body {
 }
 .site-header .logo {
   max-height: 80px;
-  margin-bottom: 0.5rem;
+  display: block;
+  margin: 0 auto 0.5rem;
 }
 
-/* nav */
+/* NAVIGATION */
 .site-nav {
   background: #333;
 }
-.site-nav ul {
+.nav-list {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
 }
-.site-nav a {
+.nav-list li + li {
+  margin-left: 1.5rem;
+}
+.nav-list a {
   color: #fff;
   text-decoration: none;
   padding: 0.75rem 1rem;
   font-weight: bold;
+  display: inline-block;
 }
-.site-nav a:hover {
+.nav-list a:hover,
+.nav-list a:focus {
   background: #444;
+  outline: none;
 }
 
-/* main / products grid */
+/* MAIN / PRODUCTS GRID */
 .products {
   display: grid;
   gap: 2rem;
@@ -57,12 +83,16 @@ body {
   height: auto;
   margin-bottom: 0.75rem;
 }
+.product-card h2,
+.product-card h3 {
+  margin-bottom: 0.5rem;
+}
 .price {
   color: #b12704;
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
-.btn {
+.btn-add {
   background: #0066c0;
   border: none;
   color: #fff;
@@ -70,11 +100,13 @@ body {
   cursor: pointer;
   border-radius: 3px;
 }
-.btn:hover {
+.btn-add:hover,
+.btn-add:focus {
   background: #00509e;
+  outline: none;
 }
 
-/* footer */
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 1rem;
@@ -84,3 +116,10 @@ body {
   color: #666;
 }
 
+/* FOCUS OUTLINES */
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid #0066c0;
+  outline-offset: 2px;
+}
