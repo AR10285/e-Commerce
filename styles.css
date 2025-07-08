@@ -1,1 +1,86 @@
+/* reset + base */
+* { margin: 0; padding: 0; box-sizing: border-box }
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background: #fafafa;
+  color: #333;
+}
+
+/* header */
+.site-header {
+  text-align: center;
+  padding: 1rem 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.site-header .logo {
+  max-height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+/* nav */
+.site-nav {
+  background: #333;
+}
+.site-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+}
+.site-nav a:hover {
+  background: #444;
+}
+
+/* main / products grid */
+.products {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding: 2rem;
+}
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem;
+}
+.product-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+.price {
+  color: #b12704;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+.btn {
+  background: #0066c0;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn:hover {
+  background: #00509e;
+}
+
+/* footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f4f4f4;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #666;
+}
 
