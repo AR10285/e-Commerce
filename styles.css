@@ -30,7 +30,7 @@ body {
 .site-header {
   text-align: center;
   padding: 1rem 0;
-  background: #fff;
+  background: pink;
   border-bottom: 1px solid #ddd;
 }
 .site-header .logo {
