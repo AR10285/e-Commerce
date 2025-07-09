@@ -1,17 +1,17 @@
-/* BASE TEXT SIZING & LINE-HEIGHT */
-html { font-size: 16px; }       /* 1rem = 16px */
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-size: 1rem;              /* 16px */
-  line-height: 1.5;             /* Required ≥1.5 */
-  color: #222;                  /* High contrast on white */
-  background: #fff;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background: #fafafa;
+  color: #333;
 }
 
-/* HEADINGS */
-h1 { font-size: 2rem; }         /* 32px */
-h2 { font-size: 1.5rem; }       /* 24px */
-
-/* SKIP LINK STYLES */
+/* SKIP-LINK */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -26,30 +26,17 @@ h2 { font-size: 1.5rem; }       /* 24px */
   top: 0;
 }
 
-/* FOCUS OUTLINES */
-a:focus,
-button:focus,
-input:focus {
-  outline: 3px solid #0066C0;
-  outline-offset: 2px;
+/* HEADER */
+.site-header {
+  text-align: center;
+  padding: 1rem 0;
+  background: pink;
+  border-bottom: 1px solid #ddd;
 }
-
-/* LINK CONTRAST */
-a {
-  color: #0066C0;     /* ≥3:1 vs white */
-  text-decoration: none;
-}
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-/* PRODUCT GRID (no changes needed here—you already have it) */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-  gap: 2rem;
-  padding: 2rem;
+.site-header .logo {
+  max-height: 80px;
+  display: block;
+  margin: 0 auto 0.5rem;
 }
 
 /* NAVIGATION BAR */
