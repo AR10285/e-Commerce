@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Dream Glory Co.</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+-  <title>Dream Glory Co.</title>
++  <title>Dream Glory Co. – Custom Stickers, Keyfobs & Bookmarks</title>
+   <link rel="stylesheet" href="styles.css" />
+ </head>
+ <body>
+-
+-  <!-- HEADER -->
++  <!-- SKIP LINK FOR KEYBOARD USERS (must be first) -->
++  <a href="#main-content" class="skip-link">Skip to main content</a>
++
++  <!-- HEADER -->
+   <header class="site-header" role="banner">
+     <img src="images/dream glory version 2.png"
+-         alt="Dream Glory Co." class="logo" />
++         alt="Dream Glory Co. logo" class="logo" />
+     <h1>Dream Glory Co.</h1>
+   </header>
 
- 
+   <!-- NAVIGATION -->
+@@
+   <!-- MAIN CONTENT -->
+   <main id="main-content" class="products" role="main">
+    <!-- Product #1 --> 
+     <article class="product-card" aria-labelledby="prod1-title">
+       <img
+         src="images/scrunchy key fob.jpg"
+-        alt="Colored key fobs"
++        alt="Assorted bright colored key fob accessories"
+         class="product-img"
+       />
+       <h2 id="prod1-title">Colorful Key Fobs</h2>
+       <p>These bright and colorful key-fobs will make a cute accessory.</p>
+       <p class="price">$6.99</p>
+       <button class="btn-add">Add to Cart</button>
+     </article>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
-    <img src="images/dream glory version 2.png" alt="Dream Glory Co." class="logo" />
-    <h1>Dream Glory Co.</h1>
-  </header>
+    <!-- Product #2 --> 
+-    <article class="product-card" aria-labelledby="prod1-title">
++    <article class="product-card" aria-labelledby="prod2-title">
+       <img
+         src="images/bow bookmark.jpg"
+-        alt="bow bookmarks"
++        alt="Ribbon bow-topped metal bookmarks"
+         class="product-img"
+       />
+-      <h2 id="prod2-title">Bow Bookmarks</h2>
++      <h2 id="prod2-title">Bow Bookmarks</h2>
+       <p>These bow bookmarks will make sure you don’t lose your place in your favorite book.</p>
+       <p class="price">$9.99</p>
+       <button class="btn-add">Add to Cart</button>
+     </article> 
 
-  <!-- NAVIGATION -->
-  <nav class="site-nav" role="navigation" aria-label="Main menu">
-    <ul class="nav-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Stickers</a></li>
-      <li><a href="#">Keyfobs</a></li>
-      <li><a href="#">Bookmarks</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li>
-        <a href="#">
-          Cart (
-          <span id="cart-count" aria-live="polite">0</span>
-          )
-        </a>
-      </li>
-    </ul>
-  </nav>
+     <!-- Product #3 --> 
+-    <article class="product-card" aria-labelledby="prod1-title">
++    <article class="product-card" aria-labelledby="prod3-title">
+       <img
+         src="images/wrestling schedule.jpg"
+-        alt="Wrestling planner stickers"
++        alt="Wrestling schedule planner sticker sheet"
+         class="product-img"
+       />
+-      <h2 id="prod3-title">Wrestling schedule</h2>
++      <h2 id="prod3-title">Wrestling Schedule Stickers</h2>
+       <p>Keep track of your wrestling schedule with these stickers, great for planners or your home calendar.</p>
+       <p class="price">$5.99</p>
+       <button class="btn-add">Add to Cart</button>
+     </article>
+     <!-- copy/paste the <article> block above for additional products -->
+   </main>
 
-  <!-- SKIP LINK FOR KEYBOARD USERS -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-
-  <!-- MAIN CONTENT -->
-  <main id="main-content" class="products" role="main">
-   <!-- Product #1 --> 
-    <article class="product-card" aria-labelledby="prod1-title">
-      <img
-        src="images/scrunchy key fob.jpg"
-        alt="Colored key fobs"
-        class="product-img"
-      />
-      <h2 id="prod1-title">Colorful Key fobs</h2>
-      <p>these bright and colorful keyfobs will make a cute accessory.</p>
-      <p class="price">$6.99</p>
-      <button class="btn-add">Add to Cart</button>
-    </article>
-
-   <!-- Product #2 --> 
-    <article class="product-card" aria-labelledby="prod1-title">
-      <img
-        src="images/bow bookmark.jpg"
-        alt="bow bookmarks"
-        class="product-img"
-      />
-      <h2 id="prod2-title">Bow Bookmarks</h2>
-      <p>These bow bookmarks will make sure you dont lose your place in your favorite book.</p>
-      <p class="price">$9.99</p>
-      <button class="btn-add">Add to Cart</button>
-    </article> 
-
-    <!-- Product #3 --> 
-    <article class="product-card" aria-labelledby="prod1-title">
-      <img
-        src="images/wrestling schedule.jpg"
-        alt="Wrestling planner stickers"
-        class="product-img"
-      />
-      <h2 id="prod3-title">Wrestling schedule</h2>
-      <p>Keep track of your wrestling schedule with these stickers, great for planners or your home calendar.</p>
-      <p class="price">$5.99</p>
-      <button class="btn-add">Add to Cart</button>
-    </article>
-    <!-- copy/paste the <article> block above for additional products -->
-  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
