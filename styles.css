@@ -30,7 +30,7 @@ body {
 .site-header {
   text-align: center;
   padding: 1rem 0;
-  background: pink;
+  background: #fff;
   border-bottom: 1px solid #ddd;
 }
 .site-header .logo {
@@ -39,7 +39,7 @@ body {
   margin: 0 auto 0.5rem;
 }
 
-/* NAVIGATION BAR */
+/* NAVIGATION */
 .site-nav {
   background: #333;
 }
@@ -47,8 +47,6 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
 }
 .nav-list li + li {
   margin-left: 1.5rem;
@@ -57,13 +55,14 @@ body {
   color: #fff;
   text-decoration: none;
   padding: 0.75rem 1rem;
+  font-weight: bold;
   display: inline-block;
 }
 .nav-list a:hover,
 .nav-list a:focus {
   background: #444;
+  outline: none;
 }
-
 
 /* MAIN / PRODUCTS GRID */
 .products {
