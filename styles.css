@@ -123,3 +123,18 @@ input:focus {
   outline: 3px solid #0066c0;
   outline-offset: 2px;
 }
+
+/* ===== Product‑detail page tweaks ===== */
+.product-detail {
+  max-width: 600px;       /* keep everything from stretching too wide */
+  margin: 2rem auto;       /* center it with some vertical breathing room */
+  padding: 0 1rem;
+}
+
+.product-detail .product-img {
+  display: block;
+  width: 100%;            /* scale down to the container’s width */
+  max-width: 400px;        /* but never stretch larger than this */
+  height: auto;
+  margin: 0 auto 1.5rem;   /* center and give space below */
+}
