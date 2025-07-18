@@ -209,3 +209,36 @@ input:focus {
 .product-detail__back a:hover {
   text-decoration: underline;
 }
+
+
+/* ===== About Page ===== */
+.about-page__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-page__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-page__media img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-page__info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-page__info p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
