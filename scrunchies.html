@@ -13,22 +13,69 @@
 
 
 <!-- Product #5 --> 
-  <main id="main-content" class="products" role="main">
-  <div class="product-detail">
-    <article class="product-card" aria-labelledby="prod5-title">
+  <main id="main-content" class="product-detail" role="main">
+  <!-- 2‑column container -->
+  <div class="product-detail__wrapper">
+
+    <!-- Column A: Image -->
+    <div class="product-detail__media">
       <img
         src="images/sakura pink.png"
         alt="Sakura Scrunchie"
-        class="product-img"
+        class="product-detail__img"
       />
-      <h2 id="prod5-title">Sakura Scrunchie</h2>
-      <p>Wrap your hair in a soft breeze of spring with our Sakura Print Scrunchie…</p>
-      <p class="price">$10.99</p>
-      <button class="btn-add">Add to Cart</button>
-    </article>
-    <p><a href="index.html">← Back to Shop</a></p>
+    </div>
+
+    <!-- Column B: Info -->
+    <div class="product-detail__info">
+      <!-- 1. Product Title -->
+      <h1 class="product-detail__title">Sakura Scrunchie</h1>
+
+      <!-- 2. Price -->
+      <p class="product-detail__price">$10.99</p>
+
+      <!-- 3. Description -->
+      <p class="product-detail__desc">
+        Wrap your hair in a soft breeze of spring with our Sakura Print Scrunchie.
+        Featuring delicate cherry‑blossom branches in shades of blush and rose, this
+        gentle fabric cuff adds a touch of feminine elegance to any look.
+      </p>
+
+      <!-- 4. Key Features / Specs -->
+      <ul class="product-detail__specs">
+        <li>100% Satin fabric</li>
+        <li>Approx. 8" diameter—wraps 2–3 times</li>
+        <li>Machine‑washable on gentle cycle</li>
+      </ul>
+
+      <!-- 5. Stock indicator (static example) -->
+      <p class="product-detail__stock">Low stock: 2 left</p>
+
+      <!-- 6. Quantity selector & Add to Cart -->
+      <div class="product-detail__actions">
+        <label for="qty" class="visually-hidden">Quantity</label>
+        <button type="button" class="qty-btn" id="qty-minus">–</button>
+        <input
+          type="number"
+          id="qty"
+          name="quantity"
+          value="1"
+          min="1"
+          max="10"
+          class="qty-input"
+        />
+        <button type="button" class="qty-btn" id="qty-plus">+</button>
+        <button class="btn-add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- 7. Back to shop -->
+      <p class="product-detail__back">
+        ← <a href="index.html">Back to Shop</a>
+      </p>
+    </div>
   </div>
 </main>
+
   
 
 <!-- FOOTER -->
