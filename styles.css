@@ -313,12 +313,11 @@ input:focus {
   text-decoration: underline;
 }
 
-
 /* ========================== */
-/* Mobile – collapsible nav    */
+/* Mobile – collapsible nav   */
 /* ========================== */
 .nav-toggle {
-  display: none;              /* hidden on desktop */
+  display: none;              
   font-size: 2rem;
   background: none;
   border: none;
@@ -330,18 +329,19 @@ input:focus {
 
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block;           /* show on mobile */
+    display: block;          
   }
   .site-nav {
-    display: none;            /* hide the menu by default */
+    display: none;           
     position: absolute;
     top: 3.5rem;
     left: 0;
     width: 100%;
     background: #ee8ed9;
+    z-index: 1000;
   }
   .site-nav.open {
-    display: block;           /* show menu when .open is on <nav> */
+    display: block;          
   }
   .nav-list {
     flex-direction: column;
@@ -350,4 +350,16 @@ input:focus {
     text-align: center;
     margin: 0.5rem 0;
   }
+
+  /* ───── LINK COLORS ───── */
+  .site-nav.open .nav-list a {
+    color: #ffffff;         /* white text */
+    font-size: 1.1rem;      /* slightly larger */
+    text-decoration: none;
+  }
+  .site-nav.open .nav-list a:hover,
+  .site-nav.open .nav-list a:focus {
+    color: #333333;         /* dark gray on hover/focus */
+  }
 }
+
