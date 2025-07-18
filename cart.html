@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Cart – Dream Glory Co.</title>
+  <meta
+    name="description"
+    content="Review your shopping cart at Dream Glory Co. – see your items, quantities, subtotals, and checkout when you’re ready!"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER + TOGGLE -->
+  <header class="site-header" role="banner">
+    <img src="images/dream glory version 2.png" alt="Dream Glory Co." class="logo" />
+    <h1>Dream Glory Co.</h1>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" role="navigation" aria-label="Main menu">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="stickers.html">Stickers</a></li>
+      <li><a href="keyfobs.html">Keyfobs</a></li>
+      <li><a href="bookmarks.html">Bookmarks</a></li>
+      <li><a href="waxmelts.html">Wax Melts</a></li>
+      <li><a href="scrunchies.html">Scrunchies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html" class="active">Cart</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="cart-page" role="main">
+    <h1>Your Cart</h1>
+
+    <!-- When cart is empty -->
+    <p id="empty-message">Your cart is currently empty.</p>
+
+    <!-- Cart table -->
+    <table class="cart-table" id="cart-table" hidden>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS will inject <tr> rows here -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="total-label">Total:</td>
+          <td id="cart-total" class="total-amount">$0.00</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button id="checkout-btn" class="btn-submit" hidden>Proceed to Checkout</button>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    © 2025 Dream Glory Co. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile nav toggle (same as before)
+    const t = document.querySelector('.nav-toggle');
+    const n = document.querySelector('.site-nav');
+    if (t && n) t.addEventListener('click', () => {
+      const open = n.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+      t.textContent = open ? '✕' : '☰';
+    });
+
+    // OPTIONAL: dynamic cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    if (cart.length) {
+      document.getElementById('empty-message').hidden = true;
+      const table = document.getElementById('cart-table');
+      const tbody = table.querySelector('tbody');
+      let total = 0;
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>$${subtotal.toFixed(2)}</td>
+          <td><button data-name="${item.name}" class="remove-btn">✕</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+      document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+      table.hidden = false;
+      document.getElementById('checkout-btn').hidden = false;
+
+      // Remove-item handlers
+      document.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const name = e.target.dataset.name;
+          const updated = cart.filter(i => i.name !== name);
+          localStorage.setItem('cart', JSON.stringify(updated));
+          location.reload();
+        });
+      });
+    }
+  </script>
+</body>
+</html>
