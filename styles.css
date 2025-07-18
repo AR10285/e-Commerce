@@ -338,7 +338,7 @@ input:focus {
     top: 3.5rem;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: #ee8ed9;
   }
   .site-nav.open {
     display: block;           /* show menu when .open is on <nav> */
