@@ -16,29 +16,16 @@
   <header class="site-header" role="banner">
     <img src="images/dream glory version 2.png" alt="Dream Glory Co." class="logo" />
     <h1>Dream Glory Co.</h1>
+  
+<!-- Mobile menu toggle (only one!) -->
+    <button
+      class="nav-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
-
-  <!-- Mobile menu toggle -->
-<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-  ☰
-</button>
-
-<script>
-  // Select the button and the nav
-  const toggle = document.querySelector('.nav-toggle');
-  const nav    = document.querySelector('.site-nav');
-
-  // Bail if one of them is missing (so you can spot a typo)
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-      toggle.textContent = open ? '✕' : '☰';
-    });
-  } else {
-    console.warn('Nav toggle or .site-nav not found on this page');
-  }
-</script>
 
 
   <!-- NAVIGATION -->
@@ -117,5 +104,22 @@
     © 2025 Dream Glory Co. All rights reserved.
   </footer>
 
+  <!-- MOBILE NAV TOGGLE SCRIPT -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav    = document.querySelector('.site-nav');
+
+    if (!toggle || !nav) {
+      console.warn('Nav toggle or .site-nav not found on this page');
+    } else {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.textContent = open ? '✕' : '☰';
+      });
+    }
+  </script>
+
 </body>
 </html>
+
