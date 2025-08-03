@@ -74,7 +74,15 @@
           <button type="button" class="qty-btn" id="qty-minus">–</button>
           <input type="number" id="qty" name="quantity" value="1" min="1" max="10" class="qty-input" />
           <button type="button" class="qty-btn" id="qty-plus">+</button>
-          <button class="btn-add-to-cart">Add to Cart</button>
+          <button 
+  type="button"
+  id="add-to-cart-btn"
+  data-name="Bow Bookmark"
+  data-price="9.99"
+>
+  Add to Cart
+</button>
+
         </div>
         <p class="product-detail__back">← <a href="index.html">Back to Shop</a></p>
       </div>
@@ -101,6 +109,35 @@
       });
     }
   </script>
+<script>
+  // Grab the button
+  const btn = document.getElementById('add-to-cart-btn');
+  btn.addEventListener('click', () => {
+    // 1) Read product info
+    const name  = btn.dataset.name;
+    const price = parseFloat(btn.dataset.price);
+    // 2) Read quantity from your existing input
+    const qtyInput = document.getElementById('qty');
+    const quantity = parseInt(qtyInput.value, 10) || 1;
+
+    // 3) Load existing cart or start fresh
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    // 4) Add or update item
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += quantity;
+    } else {
+      cart.push({ name, price, quantity });
+    }
+
+    // 5) Save back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // 6) Go to the cart page
+    window.location.href = 'cart.html';
+  });
+</script>
 
 </body>
 </html>  
