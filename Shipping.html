@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Shipping Rates – Dream Glory Co.</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- HEADER + TOGGLE -->
+  <!-- HEADER -->
   <header class="site-header" role="banner">
-  <a href="index.html">
-    <img
-      src="images/dream glory version 2.png"
-      alt="Dream Glory Co."
-      class="logo"
-    />
-  </a>
-  <h1>Dream Glory Co.</h1>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <a href="index.html">
+      <img
+        src="images/dream glory version 2.png"
+        alt="Dream Glory Co."
+        class="logo"
+      />
+    </a>
+    <h1>Dream Glory Co.</h1>
+    <button
+      class="nav-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
+
   <!-- NAVIGATION -->
   <nav class="site-nav" role="navigation" aria-label="Main menu">
     <ul class="nav-list">
@@ -29,7 +36,7 @@
       <li><a href="bookmarks.html">Bookmarks</a></li>
       <li><a href="waxmelts.html">Wax Melts</a></li>
       <li><a href="scrunchies.html">Scrunchies</a></li>
-      <li><a href="shipping.html"class="active">Shipping</a></li>
+      <li><a href="shipping.html" class="active">Shipping</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
         <a href="cart.html">
@@ -41,11 +48,7 @@
     </ul>
   </nav>
 
-  <!-- header/nav (you can copy from cart.html) -->
-  <header class="site-header" role="banner">…</header>
-  <nav class="site-nav" role="navigation" aria-label="Main menu">…</nav>
-
-  <main id="main-content" class="page">
+  <main id="main-content" class="page" role="main">
     <h1>Shipping Rates</h1>
     <p>See how shipping is calculated based on your order total:</p>
     <table class="rates-table">
@@ -72,6 +75,31 @@
     </table>
   </main>
 
-  <footer class="site-footer">© 2025 Dream Glory Co.</footer>
+  <footer class="site-footer" role="contentinfo">
+    © 2025 Dream Glory Co. All rights reserved.
+  </footer>
+
+  <!-- MOBILE NAV TOGGLE SCRIPT -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.textContent = open ? '✕' : '☰';
+      });
+    }
+  </script>
+
+  <!-- CART COUNT UPDATER -->
+  <script>
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+      cartCountEl.textContent = count;
+    }
+  </script>
 </body>
 </html>
