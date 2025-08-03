@@ -10,3 +10,27 @@
   });
 </script>
 
+// CART HANDLER (append this)
+document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name    = btn.dataset.name;
+    const price   = parseFloat(btn.dataset.price);
+    const qtySel  = document.querySelector(btn.dataset.qtyInput);
+    const quantity = parseInt(qtySel.value, 10) || 1;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const existing = cart.find(i => i.name === name);
+    if (existing) existing.quantity += quantity;
+    else cart.push({ name, price, quantity });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  });
+});
+
+// OPTIONAL: update cart-count badge
+const cartCountEl = document.getElementById('cart-count');
+if (cartCountEl) {
+  const count = JSON.parse(localStorage.getItem('cart') || '[]')
+                     .reduce((sum, i) => sum + i.quantity, 0);
+  cartCountEl.textContent = count;
+}
+
